@@ -216,6 +216,8 @@ export default function GloomyTags ({
               font-size: inherit;
               line-height: inherit;
               width: 50%;
+              background: #fff;
+              color: #000;
             }
 
             .gloomy-tag--tag {
@@ -227,6 +229,7 @@ export default function GloomyTags ({
               justify-content: center;
               padding: 2.5px 4px;
               opacity: 1;
+              color: #000;
               &:has(button:hover) {
                 background: #ffe2e2;
               }
@@ -241,7 +244,7 @@ export default function GloomyTags ({
                 line-height: inherit;
                 padding: 0 8px;
                 font-weight: 900;
-
+                color: #000;
                 &:hover {
                   color: #e53e3e;
                 }
