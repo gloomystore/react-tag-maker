@@ -7,13 +7,13 @@
 You can install the package using npm or yarn.
 
 ```bash
-npm install gloomy-tags
+npm install react-tag-maker
 ```
 
 or
 
 ```bash
-yarn add gloomy-tags
+yarn add react-tag-maker
 ```
 
 ## Usage
@@ -23,7 +23,7 @@ You can use the `GloomyTags` component to create a tag input field. The basic us
 
 ```jsx
 import React, { useState } from 'react';
-import GloomyTags from 'gloomy-tags';
+import GloomyTags from 'react-tag-maker';
 
 function App() {
   const [state, setState] = useState([]);
