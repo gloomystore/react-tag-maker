@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { GloomyTags } from './dist'
+import { GloomyTags } from './lib'
 
 function App() {
   const [state, setState] = useState([])

@@ -1,13 +1,14 @@
 {
   "name": "react-tag-maker",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "private": false,
   "files": [
     "dist/",
     "LICENSE",
     "package.json",
     "README.md",
-    "use.gif"
+    "CODE_OF_CONDUCT.md",
+    "CONTRIBUTING.md"
   ],
   "repository": {
     "type": "git",
@@ -73,7 +74,7 @@
     "start": "react-scripts start",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build": "cross-env cpx README.md dist/ && cross-env cpx package.json dist/ && cross-env cpx LICENSE dist/ && babel src/lib --out-dir dist --copy-files --extensions \".ts,.tsx\"",
+    "build": "cross-env cpx README.md dist/ && cross-env cpx package.json dist/ && cross-env cpx LICENSE dist/ && cross-env cpx CODE_OF_CONDUCT.md dist/ && cross-env cpx CONTRIBUTING.md dist/ && babel src/lib --out-dir dist --copy-files --extensions \".ts,.tsx\"",
     "type": "tsc"
   },
   "eslintConfig": {
