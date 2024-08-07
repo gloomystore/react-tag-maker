@@ -1,6 +1,6 @@
 {
   "name": "react-tag-maker",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "private": false,
   "files": [
     "dist/",
@@ -9,6 +9,11 @@
     "README.md",
     "use.gif"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gloomystore/react-tag-maker.git"
+  },
+  "homepage": "https://www.gloomy-store.com",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "module": "dist/index.js",
