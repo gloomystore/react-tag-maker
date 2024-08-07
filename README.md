@@ -21,6 +21,28 @@ yarn add react-tag-maker
 
 You can use the `GloomyTags` component to create a tag input field. The basic usage is as follows:
 
+### Basic Use
+
+```jsx
+import React, { useState } from 'react';
+import GloomyTags from 'react-tag-maker';
+
+function App() {
+  const [state, setState] = useState([]);
+
+  return (
+    <GloomyTags
+      state={state}
+      setState={setState}
+    />
+  );
+}
+
+export default App;
+```
+
+### Use Options
+
 ```jsx
 import React, { useState } from 'react';
 import GloomyTags from 'react-tag-maker';
@@ -41,6 +63,12 @@ function App() {
 
 export default App;
 ```
+
+
+
+### Styling
+
+The component includes basic styles and is provided in a CSS-in-JS manner. Use the `classNames` and `style` props to apply additional styles.
 
 ## Props
 
@@ -71,33 +99,6 @@ export default App;
 - **`disabled`** (optional): Whether to disable the remove button on the tag.
 - **`className`** (optional): CSS class name for the tag.
 
-## Examples
-
-### Basic Example
-
-```jsx
-import React, { useState } from 'react';
-import GloomyTags from 'gloomy-tags';
-
-function Example() {
-  const [tags, setTags] = useState([]);
-
-  return (
-    <GloomyTags
-      state={tags}
-      setState={setTags}
-      disableBackspaceRemove={false}
-      isEditOnRemove={false}
-      beforeAddValidate={(input, state) => input.length > 0 && !state.includes(input)}
-    />
-  );
-}
-```
-
-### Styling
-
-The component includes basic styles and is provided in a CSS-in-JS manner. Use the `classNames` and `style` props to apply additional styles.
-
 ## Contributing
 
 If you wish to contribute, please submit a pull request after [documenting](CONTRIBUTING.md) or [reporting an issue](https://github.com/your-repo/issues).
@@ -105,4 +106,3 @@ If you wish to contribute, please submit a pull request after [documenting](CONT
 ## License
 
 [GPLv3 License](LICENSE)
-"
