@@ -101,7 +101,7 @@ The component includes basic styles and is provided in a CSS-in-JS manner. Use t
 
 ## Contributing
 
-If you wish to contribute, please submit a pull request after [documenting](CONTRIBUTING.md) or [reporting an issue](https://github.com/your-repo/issues).
+If you wish to contribute, please submit a pull request after [documenting](CONTRIBUTING.md) or [reporting an issue](https://github.com/gloomystore/react-tag-maker/issues).
 
 ## License
 
