@@ -6,8 +6,10 @@
     "moduleResolution": "node",
     // Process & infer types from .js files.
     "allowJs": true,
+    // Emit .d.ts files and JavaScript files
     "declaration": true,
-    "emitDeclarationOnly": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": false, // Change to false to emit JavaScript files
     // Enable strictest settings like strictNullChecks & noImplicitAny.
     "strict": true,
     // Disallow features that require cross-file information for emit.
