@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import React from 'react';
 interface GloomyTagsProps {
     name?: string;
     placeHolder?: string;
@@ -21,6 +21,5 @@ interface GloomyTagsProps {
     style?: Record<string, string | number>;
     throttleTime?: number;
 }
-export default function GloomyTags({ name, placeHolder, state, setState, onChange, onBlur, separators, disableBackspaceRemove, onExisting, onRemoved, disabled, isEditOnRemove, beforeAddValidate, onKeyUp, classNames, style, throttleTime, }: GloomyTagsProps): import("react").JSX.Element;
+export default function GloomyTags({ name, placeHolder, state, setState, onChange, onBlur, separators, disableBackspaceRemove, onExisting, onRemoved, disabled, isEditOnRemove, beforeAddValidate, onKeyUp, classNames, style, throttleTime, }: GloomyTagsProps): React.JSX.Element;
 export {};
-//# sourceMappingURL=index.d.ts.map

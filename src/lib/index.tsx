@@ -1,3 +1,4 @@
+import React from 'react'
 import { useState, useEffect, useRef, useCallback } from 'react'
 
 function useFirstRender(callback: () => void, deps: any[]) {
@@ -69,7 +70,7 @@ interface GloomyTagsProps {
 
 let timeout: number | undefined;
 
-const GloomyTags = ({
+export default function GloomyTags({
   name,
   placeHolder,
   state,
@@ -87,7 +88,7 @@ const GloomyTags = ({
   classNames,
   style,
   throttleTime,
-}: GloomyTagsProps) => {
+}: GloomyTagsProps) {
 
   const inputRef = useRef<HTMLInputElement>(null)
   const [focusArray, setFocusArray]:[any[], Function] = useState([])
@@ -284,5 +285,3 @@ const GloomyTags = ({
     </div>
   )
 }
-
-export default GloomyTags

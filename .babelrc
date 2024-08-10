@@ -1,0 +1,31 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "modules": false, // ES 모듈 사용을 위해 modules 옵션을 false로 설정
+        "targets": "> 0.25%, not dead"
+      }
+    ],
+    [
+      "@babel/preset-react",
+      {
+        "runtime": "automatic",
+        "importSource": "@emotion/react"
+      }
+    ],
+    "@babel/preset-typescript"
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "corejs": 3,
+        "helpers": true,
+        "regenerator": true,
+        "useESModules": true // ES 모듈로 헬퍼 코드 출력
+      }
+    ],
+    "@babel/plugin-transform-react-jsx"
+  ]
+}
