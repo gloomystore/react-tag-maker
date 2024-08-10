@@ -1,12 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 
-function App () {
-  const [state, setState] = useState([])
-  return (
-    <GloomyTags state={state} setState={setState} />
-  )
-}
-
 function useFirstRender(callback: () => void, deps: any[]) {
   const isFirstRender = useRef(true);
   useEffect(() => {
@@ -76,7 +69,7 @@ interface GloomyTagsProps {
 
 let timeout: number | undefined;
 
-export default function GloomyTags ({
+const GloomyTags = ({
   name,
   placeHolder,
   state,
@@ -94,7 +87,7 @@ export default function GloomyTags ({
   classNames,
   style,
   throttleTime,
-}: GloomyTagsProps) {
+}: GloomyTagsProps) => {
 
   const inputRef = useRef<HTMLInputElement>(null)
   const [focusArray, setFocusArray]:[any[], Function] = useState([])
@@ -291,3 +284,5 @@ export default function GloomyTags ({
     </div>
   )
 }
+
+export default GloomyTags

@@ -1,19 +1,14 @@
 {
   "presets": [
-    "@babel/preset-env",
+    "@babel/preset-env", // 최신 JavaScript로 변환
     [
       "@babel/preset-react",
       {
-        "runtime": "automatic"
+        "runtime": "automatic",
+        "importSource": "@emotion/react" // JSX의 경우에만 필요 (필요에 따라 설정)
       }
     ],
-    [
-      "@babel/preset-typescript",
-      {
-        "isTSX": true,
-        "allExtensions": true
-      }
-    ]
+    "@babel/preset-typescript" // TypeScript 지원
   ],
   "plugins": [
     [
@@ -22,8 +17,9 @@
         "corejs": 3,
         "helpers": true,
         "regenerator": true,
-        "useESModules": false
+        "useESModules": true
       }
-    ]
+    ],
+    "@babel/plugin-transform-react-jsx" // JSX 변환을 위해 필요
   ]
 }

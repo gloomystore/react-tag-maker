@@ -1,7 +1,28 @@
-import { GloomyTags } from './components/GloomyTags.d'
-// 이 모듈의 모든 export를 명시적으로 타입 정의합니다.
+import React from 'react';
 
-// GloomyTags가 default export로 되어있기 때문에,
-// 여기서도 default로 export되도록 타입 정의합니다.
+interface GloomyTagsProps {
+    name?: string;
+    placeHolder?: string;
+    state?: string[];
+    setState: React.Dispatch<any>;
+    onChange?: (tags: string[]) => void;
+    onBlur?: any;
+    separators?: string[];
+    disableBackspaceRemove?: boolean;
+    onExisting?: (tag: string) => void;
+    onRemoved?: (tag: string) => void;
+    disabled?: boolean;
+    isEditOnRemove?: boolean;
+    beforeAddValidate?: (tag: string, existingTags: string[]) => boolean;
+    onKeyUp?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+    classNames?: {
+        input?: string;
+        tag?: string;
+    };
+    style?: Record<string, string | number>;
+    throttleTime?: number;
+}
 
-export default GloomyTags;
+declare const GloomyTags: (props: GloomyTagsProps) => JSX.Element;
+
+export default GloomyTags; // 기본 내보내기로 수정
