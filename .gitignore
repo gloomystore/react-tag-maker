@@ -25,3 +25,12 @@ yarn-error.log*
 /dist
 /lib
 /public
+
+
+git-filter-repo
+.mailmap
+
+
+
+
+
