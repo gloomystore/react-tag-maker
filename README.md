@@ -8,7 +8,7 @@ You can install the package using npm or yarn.
 
 ```bash
 npm install react-tag-maker
-```
+``` 
 
 or
 
