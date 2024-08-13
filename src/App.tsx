@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
-import './App.css';
 import GloomyTags from './dist'
 // import GloomyTags from './lib'
 // import GloomyTags from 'react-tag-maker'
