@@ -116,6 +116,9 @@ export default function GloomyTags({
     }
   }, [focusArray])
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.nativeEvent.isComposing) {
+      return;
+    }
     if(timeout) return
     setTimeout(() => timeout = undefined , timeout)
 
@@ -131,7 +134,7 @@ export default function GloomyTags({
 
 
       // 쓰로틀 상태에서는 안함
-      if(!throttle) setThrottle(setTimeout(() => {setThrottle(0)}, throttleTime ?? 300))
+      if(!throttle) setThrottle(setTimeout(() => {setThrottle(0)}, throttleTime ?? 10))
       else return console.warn('react-tag-maker throttling!')
 
       if (!state.includes(inputValue)) {
