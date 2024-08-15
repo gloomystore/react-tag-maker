@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
 import GloomyTags from './dist'
 // import GloomyTags from './lib'
 // import GloomyTags from 'react-tag-maker'
@@ -10,7 +9,6 @@ function App() {
     <div className="App">
       <GloomyTags state={state} setState={setState}  />
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
