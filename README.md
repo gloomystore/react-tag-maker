@@ -17,7 +17,7 @@ yarn add react-tag-maker
 ```
 
 ## Usage
-![Usage Example](https://cdn.gloomy-store.com/react-tag-maker/use.gif)
+![Usage Example](https://github.com/gloomystore/react-tag-maker/blob/main/use.gif?raw=true)
 
 You can use the `GloomyTags` component to create a tag input field. The basic usage is as follows:
 
