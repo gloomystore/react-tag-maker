@@ -25,7 +25,7 @@
       "import": "./dist/index.js"
     }
   },
-  "homepage": "https://www.gloomy-store.com",
+  "homepage": "https://www.gloomystore.com",
   "license": "GPL-3.0",
   "keywords": [
     "react-tag",
@@ -52,7 +52,8 @@
   "description": "A customizable tag input component for React and Nextjs",
   "dependencies": {
     "@babel/runtime": "^7.25.0",
-    "@babel/runtime-corejs3": "^7.25.0"
+    "@babel/runtime-corejs3": "^7.25.0",
+    "fexjs": "^1.0.5"
   },
   "devDependencies": {
     "@babel/cli": "^7.24.8",
