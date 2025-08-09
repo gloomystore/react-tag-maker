@@ -1,69 +1,108 @@
-# React + TypeScript + Vite
+# react-tag-maker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+`GloomyTags` is a custom tag input component for React. This component provides functionality to add and remove tags, enhancing the user experience with various options.
 
-Currently, two official plugins are available:
+## Installation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+You can install the package using npm or yarn.
 
-## Expanding the ESLint configuration
+```bash
+npm install react-tag-maker
+``` 
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+or
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+yarn add react-tag-maker
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Usage
+![Usage Example](https://cloudflare-caching-image.pikchu3333.workers.dev/use.gif?raw=true)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+You can use the `GloomyTags` component to create a tag input field. The basic usage is as follows:
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Basic Use
+
+```jsx
+import React, { useState } from 'react';
+import GloomyTags from 'react-tag-maker';
+
+function App() {
+  const [state, setState] = useState([]);
+
+  return (
+    <GloomyTags
+      state={state}
+      setState={setState}
+    />
+  );
+}
+
+export default App;
 ```
+
+### Use Options
+
+```jsx
+import React, { useState } from 'react';
+import GloomyTags from 'react-tag-maker';
+
+function App() {
+  const [state, setState] = useState([]);
+
+  return (
+    <GloomyTags
+      state={state}
+      setState={setState}
+      disableBackspaceRemove={false} // Whether to remove tags with Backspace
+      isEditOnRemove={false} // Whether to switch to edit mode when a tag is removed
+      throttleTime={300} // Input throttle time
+    />
+  );
+}
+
+export default App;
+```
+
+
+
+### Styling
+
+The component includes basic styles and is provided in a CSS-in-JS manner. Use the `classNames` and `style` props to apply additional styles.
+
+## Props
+
+### `GloomyTags`
+
+- **`name`** (optional): The name attribute of the `<input>` element.
+- **`placeHolder`** (optional): The placeholder text for the `<input>` element.
+- **`state`**: An array of strings representing the current tag state.
+- **`setState`**: A function to update the tag state.
+- **`onChange`** (optional): Callback function called when the tag state changes.
+- **`onBlur`** (optional): Callback function called when the `<input>` element loses focus.
+- **`separators`** (optional): Array of keys to separate tags (e.g., `[' ', ',']`).
+- **`disableBackspaceRemove`** (optional): Whether to allow removing tags with the Backspace key.
+- **`onExisting`** (optional): Callback function called when an existing tag is entered.
+- **`onRemoved`** (optional): Callback function called when a tag is removed.
+- **`disabled`** (optional): Whether to disable the component.
+- **`isEditOnRemove`** (optional): Whether to switch to edit mode when a tag is removed.
+- **`beforeAddValidate`** (optional): Function for validating before adding a tag.
+- **`onKeyUp`** (optional): Keyup event handler for the `<input>` element.
+- **`classNames`** (optional): Object to specify CSS class names. `{ tag?: string, input?: string }`.
+- **`style`** (optional): Object to apply inline styles.
+- **`throttleTime`** (optional): Input throttle time.
+
+### `Tag`
+
+- **`text`**: Text to display on the tag.
+- **`remove`**: Function to remove the tag.
+- **`disabled`** (optional): Whether to disable the remove button on the tag.
+- **`className`** (optional): CSS class name for the tag.
+
+## Contributing
+
+If you wish to contribute, please submit a pull request after [documenting](CONTRIBUTING.md) or [reporting an issue](https://github.com/gloomystore/react-tag-maker/issues).
+
+## License
+
+[GPLv3 License](LICENSE)
