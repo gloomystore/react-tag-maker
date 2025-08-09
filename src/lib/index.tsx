@@ -1,7 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-expressions */
+// src/lib/index.tsx - 라이브러리 메인 엔트리 파일
+
 import React from 'react'
 import { useState, useEffect, useRef, useCallback } from 'react'
 
-function useFirstRender(callback: () => void, deps: any[]) {
+function useFirstRender(callback: () => void, deps: unknown[]) {
   const isFirstRender = useRef(true);
   useEffect(() => {
     if (isFirstRender.current) {
@@ -45,11 +49,11 @@ function Tag({ text, remove, disabled, className }: TagProps) {
   )
 }
 
-interface GloomyTagsProps {
+export interface GloomyTagsProps {
   name?: string
   placeHolder?: string
   state: string[]
-  setState: React.Dispatch<any>
+  setState: React.Dispatch<string[]>
   onChange?: (value: string[]) => void
   onBlur?: () => void
   separators?: string[]
@@ -91,13 +95,13 @@ export default function GloomyTags({
 }: GloomyTagsProps) {
 
   const inputRef = useRef<HTMLInputElement>(null)
-  const [focusArray, setFocusArray]:[any[], Function] = useState([])
+  const [focusArray, setFocusArray] = useState<any[]>([])
   useFirstRender(() => {
     setState && setState(state)
   }, [state])
 
   useEffect(() => {
-    const tempFocusArray = typeof state === 'object' ? state.map((e:any) => ({
+    const tempFocusArray = typeof state === 'object' ? state.map((e:unknown) => ({
       tag: e,
       focus: false,
     })) : []
@@ -105,11 +109,11 @@ export default function GloomyTags({
     onChange && onChange(state)
   }, [state, onChange])
   
-  const [throttle, setThrottle]:[any, Function] = useState(0)
+  const [throttle, setThrottle] = useState<unknown>(0)
   const ENTER_KEYS = ['Enter', ' ', ',']
   const [isFocus, setIsFocus] = useState(false)
   useEffect(() => {
-    if(focusArray.find((e) => e.focus)) {
+    if(focusArray.find((e:any) => e && e.focus)) {
       setIsFocus(true)
     } else {
       setIsFocus(false)
@@ -158,7 +162,7 @@ export default function GloomyTags({
           setFocusArray(tempFocusArray)
         }
       } else {
-
+        console.log()
       }
     } else {
       const tempFocusArray = [...focusArray]
